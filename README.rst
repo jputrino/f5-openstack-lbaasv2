@@ -19,6 +19,8 @@
 
 f5-openstack-lbaasv2
 ====================
+|Docs Build Status|
+
 
 Introduction
 ------------
@@ -30,7 +32,7 @@ OpenStack environment.
 .. warning::
 
     Alpha and beta releases are **unsupported** development releases. We
-    welcome feedback and bug reporting for these releases; see `Filing Issues <https://github.com/F5Networks/f5-openstack-lbaasv2/blob/experimental/README.md#filing-issues>`
+    welcome feedback and bug reporting for these releases; see `Filing Issues <https://github.com/F5Networks/f5-openstack-lbaasv2/blob/experimental/README.md#filing-issues>`_
     for more information.
 
 Compatibility
@@ -263,3 +265,8 @@ have completed and submitted the `F5 Contributor License
 Agreement <http://f5-openstack-docs.rtfd.org/en/latest/cla_landing.html>`_
 to Openstack_CLA@f5.com prior to their code submission being included
 in this project.
+
+
+.. |Docs Build Status| image:: https://readthedocs.org/projects/f5-openstack-lbaasv2/badge/?version=latest
+:target: http://f5-openstack-lbaasv2.readthedocs.org/en/latest/?badge=latest
+:alt: Documentation Status
