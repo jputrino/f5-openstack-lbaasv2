@@ -8,7 +8,11 @@ F5 OpenStack LBaaSv2
 
 .. include:: ../README.rst
     :start-line: 24
-    :end-line: 156
+    :end-line: 37
+
+.. include:: ../README.rst
+    :start-line: 42
+    :end-line: 266
 
 Contents:
 

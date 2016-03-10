@@ -35,6 +35,11 @@ OpenStack environment.
     welcome feedback and bug reporting for these releases; see `Filing Issues <https://github.com/F5Networks/f5-openstack-lbaasv2/blob/experimental/README.md#filing-issues>`_
     for more information.
 
+
+Documentation
+-------------
+See the `Documentation <http://f5-openstack-lbaasv2.rtfd.org/en/>`_ for installation and configuration instructions.
+
 Compatibility
 -------------
 This plugin can be used with OpenStack releases from Liberty forward. If
@@ -118,7 +123,6 @@ use the F5 OpenStack LBaasv2 plugin.
         }
 
 
-
 F5 LBaaSv2 Plugin
 ~~~~~~~~~~~~~~~~~
 You can configure a variety of options in
@@ -154,23 +158,17 @@ configurations must be made via the CLI or REST API.
     The LBaaSv2 commands all begin with ``lbaas``.
 
 
-Documentation
--------------
-
-See `Documentation <http://f5-openstack-lbaasv2.rtfd.org/en/>`_.
-
-
 Filing Issues
 -------------
 If you find an issue we would love to hear about it. Please go to the
-:guilabel:`Issues` tab for this repo and open a new issue for each bug you'd
+Issues tab for this repo and open a new issue for each bug you'd
 like to report. We also welcome you to submit feature requests as issues.
 For both, please be sure to complete all of the fields in the issue template.
 
 
 Contributing
 ------------
-See `Contributing <CONTRIBUTING.md>`_.
+See `Contributing <https://github.com/F5Networks/f5-openstack-lbaasv2/blob/experimental/CONTRIBUTING.md>`_.
 
 .. note::
 
@@ -239,7 +237,7 @@ Copyright 2015-2016 F5 Networks Inc.
 
 Support
 -------
-See `Support <SUPPORT.md>`_.
+See `Support <https://github.com/F5Networks/f5-openstack-lbaasv2/blob/experimental/SUPPORT.md>`_.
 
 License
 -------
