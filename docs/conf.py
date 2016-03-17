@@ -61,9 +61,9 @@ author = u'F5 Networks'
 # built documents.
 #
 # The short X.Y version.
-version = u'2.0'
+version = u'2.0.1'
 # The full version, including alpha/beta/rc tags.
-release = u'2.0'
+release = u'2.0.1a1'
 
 # OpenStack release
 openstack_release = "Liberty"
@@ -184,7 +184,7 @@ html_use_index = True
 #html_show_sourcelink = True
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
-#html_show_sphinx = True
+html_show_sphinx = False
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
 html_show_copyright = True
@@ -297,4 +297,9 @@ texinfo_documents = [
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+#intersphinx_mapping = {'https://docs.python.org/': None}
+
+# Set up intersphinx_mapping for other LBaaSv2 project docs sites
+#intersphinx_mapping = {'http://f5-openstack-lbaasv2-driver.readthedocs.org/en/': None}
+#intersphinx_mapping = {'http://f5-openstack-lbaasv2-plugin.readthedocs.org/en/': None}
+#intersphinx_mapping = {'http://f5-openstack-agent.readthedocs.org/en/': None}

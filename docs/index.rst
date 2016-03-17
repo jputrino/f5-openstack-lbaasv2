@@ -6,18 +6,16 @@
 F5 OpenStack LBaaSv2
 ====================
 
+.. toctree::
+    :hidden:
+
+    release_notes
+
+
 .. include:: ../README.rst
     :start-line: 24
-    :end-line: 37
+    :end-line: 41
 
 .. include:: ../README.rst
-    :start-line: 42
-    :end-line: 266
-
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-
-
+    :start-line: 45
+    :end-line: 338

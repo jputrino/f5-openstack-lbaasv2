@@ -15,6 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
    -->
+
 .. _readme:
 
 f5-openstack-lbaasv2
@@ -29,11 +30,13 @@ plugin allows you to orchestrate BIG-IP load balancing services – including
 virtual IPs, pools, device service groups, and health monitoring – in an
 OpenStack environment.
 
+Releases
+--------
+The latest release is v |release|. See the :ref:`Release Notes <release-notes>` for more information.
+
 .. warning::
 
-    Alpha and beta releases are **unsupported** development releases. We
-    welcome feedback and bug reporting for these releases; see `Filing Issues <https://github.com/F5Networks/f5-openstack-lbaasv2/blob/experimental/README.md#filing-issues>`_
-    for more information.
+    Alpha and beta releases are **unsupported** development releases. We     welcome feedback and bug reporting for these releases; see :ref:`Filing Issues <filing-issues>` for more information.
 
 
 Documentation
@@ -42,37 +45,68 @@ See the `Documentation <http://f5-openstack-lbaasv2.rtfd.org/en/>`_ for installa
 
 Compatibility
 -------------
-This plugin can be used with OpenStack releases from Liberty forward. If
-you are using an earlier release, you'll have to use the `LBaaSv1
-plugin <https://github.com/F5Networks/openstack-f5-lbaasv1>`__.
+This plugin can be used with OpenStack releases from Liberty forward. If you are using an earlier release, you'll have to use the `LBaaSv1 plugin <https://github.com/F5Networks/openstack-f5-lbaasv1>`__.
+
+Subprojects
+-----------
+The LBaaSv2 plugin comprises packages from different F5 Networks projects:
+
+ - `F5Networks/f5-openstack-lbaasv2-driver <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_
+ - `F5Networks/f5-openstack-agent <https://github.com/F5Networks/f5-openstack-agent>`_
+
+Documentation for each project can be accessed via `Read the Docs <http://f5-openstack-lbaasv2.rtfd.org/en/>`_.
+
+Before You Begin
+----------------
+For release |release|, you will need to add the F5 LBaaSv2 service provider package to your Neutron controller host *before* installing the F5 LBaaSv2 plugin packages. This package must be added to the python path for neutron_lbaas.
+
+.. todo:: where can the service provider package be downloaded from??
+
+
+CentOS
+~~~~~~
+
+.. code-block:: text
+
+    # tar xzf f5.tgz -C /usr/lib/python2.7/site–packages/neutron_lbaas/drivers
+
+Ubuntu
+~~~~~~
+
+.. code-block:: text
+
+    # tar xzf f5.tgz –C /usr/local/lib/python2.7/dist-packages/neutron_lbaas/drivers
+
 
 Installation
 ------------
+All of the packages that comprise the F5 LBaaSv2 plugin will be available for download from PyPi. For the |release| release, there are a few extra hoops to jump through, as described in the following sections.
 
-All of the pieces of the F5 LBaaSv2 plugin can be downloaded from PyPi. Be
-sure to install each piece, as they are all required to use the plugin.
+Download the Release Packages from GitHub
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: text
-
-    $ pip install f5-lbaasv2-plugin
-    $ pip install f5-agent
-    $ pip install f5-driver
-
-
-.. add in the correct names when they are available.
-
-Installing directly from GitHub
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can download the source code directly from GitHub.
+You can download the driver and agent release packages directly from F5 Networks' GitHub repos; each has to be built using Python before it can be installed. Take the steps shown below for both `f5-openstack-lbaasv2-driver <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_ and `f5-openstack-agent <https://github.com/F5Networks/f5-openstack-agent>`_.
 
 .. code-block:: text
 
-    $ curl -o https://github.com/F5Networks/f5-openstack-lbaasv2/????
-    f5_os_lbaasv2_alpha1.tgz
+    $ git clone <dir>
+    $ cd <dir>
+    $ python setup.py sdist
 
 
-.. add in the correct download URL and filename when they're available.
+The build package can then be found in the *<dir>/dist/* directory.
+
+ .. note::
+
+    If you're installing the package from a different directory than the one in which you installed it, be sure to include the full path in the ``pip install`` command (shown below).
+
+Install the Agent and Driver Packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+    $ sudo pip install f5-openstack-lbaasv2-driver-2.0.1a1.tar.gz
+    $ sudo pip install f5-openstack-agent-2.0.1a1.tar.gz
 
 
 Configuration
@@ -81,26 +115,19 @@ Configuration
 Neutron
 ~~~~~~~
 
-You will need to make a few configurations in your Neutron environment to
-use the F5 OpenStack LBaasv2 plugin.
+You will need to make a few configurations in your Neutron environment in order to use the F5 OpenStack LBaasv2 plugin.
 
-    1. Edit :file:`/etc/neutron/neutron_lbaas.conf` and add F5 as the service
-    provider:
+1. Edit :file:`/etc/neutron/neutron_lbaas.conf` and add F5 as the service    provider. Comment out, or remove the default tag from, any other ``LOADBALANCERV2`` entries.
 
     .. code-block:: text
 
         $ vi /etc/neutron/neutron_lbaas.conf
         ...
-        service_provider = LOADBALANCERV2:F5:neutron_lbaas.
-        drivers.f5.driver.F5Driver:default
+        service_provider = LOADBALANCERV2:F5:neutron_lbaas.drivers.f5.driver.F5Driver:default
         ...
 
 
-    .. add info about the service provider tarball.
-
-
-    2. Edit :file:`/etc/neutron/neutron.conf` and add the ``lbaasv2``
-    service plugin:
+2. Edit :file:`/etc/neutron/neutron.conf` and add the ``lbaasv2`` service plugin. If there is an entry for LBaaSv1 (``lbaas``), remove it.
 
     .. code-block:: text
 
@@ -110,10 +137,7 @@ use the F5 OpenStack LBaasv2 plugin.
         ...
 
 
-    3. Restart the ``neutron-server`` service.
-
-    4. Make sure that the ``enable_lb`` option in :file:`local_settings.py` is
-    set to ``True``.
+3. Make sure that the ``enable_lb`` option in :file:`local_settings.py` is    set to ``True``.
 
     .. code-block:: text
 
@@ -122,23 +146,54 @@ use the F5 OpenStack LBaasv2 plugin.
         ...
         }
 
+4. Restart the ``neutron-server`` service.
+
 
 F5 LBaaSv2 Plugin
 ~~~~~~~~~~~~~~~~~
-You can configure a variety of options in
-:file:`/etc/neutron/f5-oslbaasv1-agent.ini`. The options supported in this
-release are noted below.
+
+The configurable options supported in this release are noted below. See the agent configuration file -- :file:`f5-openstack-agent.ini` -- for more information.
 
 .. table::
 
-    +----------------------------+-------------------------------+
-    | Feature                    | Description                   |
-    +============================+===============================+
-    | global traffic routed mode |                               |
-    +----------------------------+-------------------------------+
+    +---------------------------------+-----------------------------------+
+    | Feature                         | Description                       |
+    +=================================+===================================+
+    | Global Routing Mode -           | Only global routing is supported; |
+    |  ``f5_global_routed_mode``      | no L2 or L3 Segmentation.         |
+    +---------------------------------+-----------------------------------+
+    | Device Setting -                | External (hardware or VE) only.   |
+    |  ``f5_device_type``             |                                   |
+    +---------------------------------+-----------------------------------+
+    | HA model -                      | Standalone only; HA is not        |
+    |  ``f5_ha_type``                 | available.                        |
+    +---------------------------------+-----------------------------------+
+    | Sync Mode -                     | Replication only.                 |
+    |  ``f5_sync_mode``               |                                   |
+    +---------------------------------+-----------------------------------+
 
 
-Once your configurations are complete, restart the agent:
+1. To use the available features, make sure the entries in the agent config file match those shown below.
+
+.. code-block:: text
+
+    $ vi /etc/neutron/services/f5/f5-openstack-agent.ini
+    f5_global_routed_mode=True
+    f5_ha_type=standalone
+    f5_device_type=external
+    f5_sync_mode=replication
+
+
+2. Add the IP address, username and password of your BIG-IP to the agent config file. This ensures that the agent can communicate with the BIG-IP.
+
+.. code-block:: text
+
+    icontrol_hostname=<bigip_icontrol_ip_address>
+    icontrol_username = <username>
+    icontrol_password = <password>
+
+
+3. Start the agent:
 
 .. code-block:: text
 
@@ -148,15 +203,31 @@ Once your configurations are complete, restart the agent:
 Usage
 -----
 
-OpenStack Horizon does not currently support LBaaSv2 services. All LBaaSv2
-configurations must be made via the CLI or REST API.
-
-`OpenStack CLI Documentation <http://docs.openstack.org/cli-reference/neutron.html>`_
-
 .. note::
 
-    The LBaaSv2 commands all begin with ``lbaas``.
+    OpenStack Horizon does not currently support LBaaSv2 services. All LBaaSv2
+    configurations must be made via the CLI or REST API. The LBaaSv2 CLI commands all begin with ``lbaas``.
 
+    `OpenStack CLI Documentation <http://docs.openstack.org/cli-reference/neutron.html>`_
+
+
+The following restrictions apply for Neutron LBaaS objects in this release.
+
+.. table::
+
+    +----------------+---------------+----------------------------------------+
+    | Object         | Supported     | Unsupported                            |
+    +================+===============+========================================+
+    | Listener       || ``HTTP``     || ``TERMINATED_HTTPS``                  |
+    |                || ``HTTPS``    || ``sni_container_refs``                |
+    |                || ``TCP``      || ``default_tls_container_ref``         |
+    +----------------+---------------+----------------------------------------+
+    | Load balancer  |               | Statistics commands                    |
+    |                |               | (``neutron lbaas-loadbalancer-stats``) |
+    +----------------+---------------+----------------------------------------+
+
+
+.. _filing-issues:
 
 Filing Issues
 -------------
@@ -224,7 +295,7 @@ step 1 in the Unit Test section).
 
 .. code-block:: text
 
-    flake8 ./
+    $ flake8 ./
 
 
 Contact
