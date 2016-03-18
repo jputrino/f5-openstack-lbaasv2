@@ -54,8 +54,6 @@ The LBaaSv2 plugin comprises packages from different F5 Networks projects:
  - `F5Networks/f5-openstack-lbaasv2-driver <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_
  - `F5Networks/f5-openstack-agent <https://github.com/F5Networks/f5-openstack-agent>`_
 
-Documentation for each project can be accessed via `Read the Docs <http://f5-openstack-lbaasv2.rtfd.org/en/>`_.
-
 Before You Begin
 ----------------
 For release |release|, you will need to install the following dependencies your Neutron controller host *before* installing the F5 LBaaSv2 plugin packages.

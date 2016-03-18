@@ -23,9 +23,9 @@ Caveats
 
 
 .. include:: ../README.rst
-    :start-line: 130
-    :end-line: 150
+    :start-line: 128
+    :end-line: 149
 
 .. include:: ../README.rst
-    :start-line: 200
-    :end-line: 216
+    :start-line: 202
+    :end-line: 214
