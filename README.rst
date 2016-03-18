@@ -36,12 +36,7 @@ The latest release is v |release|. See the :ref:`Release Notes <release-notes>` 
 
 .. warning::
 
-    Alpha and beta releases are **unsupported** development releases. We     welcome feedback and bug reporting for these releases; see :ref:`Filing Issues <filing-issues>` for more information.
-
-
-Documentation
--------------
-See the `Documentation <http://f5-openstack-lbaasv2.rtfd.org/en/>`_ for installation and configuration instructions.
+    Alpha and beta releases are **unsupported** development releases. We welcome feedback and bug reporting for these releases; see :ref:`Filing Issues <filing-issues>` for more information.
 
 
 Documentation
