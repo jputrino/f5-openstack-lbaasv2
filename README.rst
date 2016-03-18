@@ -45,7 +45,7 @@ See the `Documentation <http://f5-openstack-lbaasv2.rtfd.org/en/>`_ for installa
 
 Compatibility
 -------------
-This plugin can be used with OpenStack releases from Liberty forward. If you are using an earlier release, you'll have to use the `LBaaSv1 plugin <https://github.com/F5Networks/openstack-f5-lbaasv1>`__.
+This plugin can be used with OpenStack releases from Liberty forward. If you are using an earlier release, you'll have to use the `LBaaSv1 plugin <https://github.com/F5Networks/openstack-f5-lbaasv1>`_.
 
 Subprojects
 -----------
@@ -66,61 +66,35 @@ For release |release|, you will need to install the following dependencies your 
 
     $ pip install f5-sdk
 
-
-- F5 LBaaSv2 service provider package
+- Download the F5 LBaaSv2 service provider `package <https://github.com/F5Networks/neutron-lbaas/releases/download/v2.0.1a1/f5.tgz>`_.
 
 .. note::
 
-    This package must be added to the python path for neutron_lbaas.
+    The service provider package must be added to the python path for neutron_lbaas.
+
+    CentOS:
+
+    .. code-block:: text
+
+        # tar xzf f5.tgz -C /usr/lib/python2.7/site–packages/neutron_lbaas/drivers
+
+    Ubuntu:
 
 
-.. todo:: where can the service provider package be downloaded from??
+    .. code-block:: text
 
-
-CentOS
-~~~~~~
-
-.. code-block:: text
-
-    # tar xzf f5.tgz -C /usr/lib/python2.7/site–packages/neutron_lbaas/drivers
-
-Ubuntu
-~~~~~~
-
-.. code-block:: text
-
-    # tar xzf f5.tgz –C /usr/local/lib/python2.7/dist-packages/neutron_lbaas/drivers
+        # tar xzf f5.tgz –C /usr/local/lib/python2.7/dist-packages/neutron_lbaas/drivers
 
 
 Installation
 ------------
-All of the packages that comprise the F5 LBaaSv2 plugin will be available for download from PyPi. For the |release| release, there are a few extra hoops to jump through, as described in the following sections.
 
-Download the Release Packages from GitHub
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can download the driver and agent release packages directly from F5 Networks' GitHub repos; each has to be built using Python before it can be installed. Take the steps shown below for both `f5-openstack-lbaasv2-driver <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_ and `f5-openstack-agent <https://github.com/F5Networks/f5-openstack-agent>`_.
+You can download the driver and agent release packages directly from F5 Networks' GitHub repos using pip.
 
 .. code-block:: text
 
-    $ git clone <dir>
-    $ cd <dir>
-    $ python setup.py sdist
-
-
-The build package can then be found in the *<dir>/dist/* directory.
-
- .. note::
-
-    If you're installing the package from a different directory than the one in which you installed it, be sure to include the full path in the ``pip install`` command (shown below).
-
-Install the Agent and Driver Packages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-    $ sudo pip install f5-openstack-lbaasv2-driver-2.0.1a1.tar.gz
-    $ sudo pip install f5-openstack-agent-2.0.1a1.tar.gz
+    $ pip install git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver@2.0.1a1
+    $ pip install git+https://github.com/F5Networks/f5-openstack-agent@2.0.1a1
 
 
 Configuration
@@ -131,15 +105,14 @@ Neutron
 
 You will need to make a few configurations in your Neutron environment in order to use the F5 OpenStack LBaasv2 plugin.
 
-1. Edit :file:`/etc/neutron/neutron_lbaas.conf` and add F5 as the service    provider. Comment out, or remove the default tag from, any other ``LOADBALANCERV2`` entries.
+1. Edit :file:`/etc/neutron/neutron_lbaas.conf` and add F5 as the service provider. Comment out, or remove the default tag from, any other ``LOADBALANCERV2`` entries.
 
     .. code-block:: text
 
         $ vi /etc/neutron/neutron_lbaas.conf
         ...
-        service_provider = LOADBALANCERV2:F5:neutron_lbaas.drivers.f5.driver.F5Driver:default
+        service_provider = LOADBALANCERV2:F5NetworksTest:neutron_lbaas.drivers.f5.driver_v2.F5LBaaSV2DriverTest:default
         ...
-
 
 2. Edit :file:`/etc/neutron/neutron.conf` and add the ``lbaasv2`` service plugin. If there is an entry for LBaaSv1 (``lbaas``), remove it.
 
@@ -147,9 +120,8 @@ You will need to make a few configurations in your Neutron environment in order 
 
         $ vi /etc/neutron/neutron.conf
         ...
-        service_plugins = [already defined plugins],lbaasv2
+        service_plugins = [already defined plugins],neutron_lbaas.services.loadbalancer.plugin.LoadBalancerPluginv2
         ...
-
 
 3. Make sure that the ``enable_lb`` option in :file:`local_settings.py` is    set to ``True``.
 
@@ -159,6 +131,7 @@ You will need to make a few configurations in your Neutron environment in order 
         'enable_lb': True,
         ...
         }
+.. todo:: take this step out
 
 4. Restart the ``neutron-server`` service.
 
@@ -192,17 +165,17 @@ The configurable options supported in this release are noted below. See the agen
 .. code-block:: text
 
     $ vi /etc/neutron/services/f5/f5-openstack-agent.ini
-    f5_global_routed_mode=True
-    f5_ha_type=standalone
-    f5_device_type=external
-    f5_sync_mode=replication
+    f5_global_routed_mode = True
+    f5_ha_type = standalone
+    f5_device_type = external
+    f5_sync_mode = replication
 
 
 2. Add the IP address, username and password of your BIG-IP to the agent config file. This ensures that the agent can communicate with the BIG-IP.
 
 .. code-block:: text
 
-    icontrol_hostname=<bigip_icontrol_ip_address>
+    icontrol_hostname = <bigip_icontrol_ip_address>
     icontrol_username = <username>
     icontrol_password = <password>
 
