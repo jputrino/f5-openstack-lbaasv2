@@ -58,7 +58,21 @@ Documentation for each project can be accessed via `Read the Docs <http://f5-ope
 
 Before You Begin
 ----------------
-For release |release|, you will need to add the F5 LBaaSv2 service provider package to your Neutron controller host *before* installing the F5 LBaaSv2 plugin packages. This package must be added to the python path for neutron_lbaas.
+For release |release|, you will need to install the following dependencies your Neutron controller host *before* installing the F5 LBaaSv2 plugin packages.
+
+- F5 SDK
+
+.. code-block:: shell
+
+    $ pip install f5-sdk
+
+
+- F5 LBaaSv2 service provider package
+
+.. note::
+
+    This package must be added to the python path for neutron_lbaas.
+
 
 .. todo:: where can the service provider package be downloaded from??
 
@@ -197,7 +211,18 @@ The configurable options supported in this release are noted below. See the agen
 
 .. code-block:: text
 
-    $ service f5-oslbaasv2-agent restart
+    # systemctl enable f5-openstack-agent.service
+    # systemctl start f5-openstack-agent.service
+
+
+
+.. note::
+
+    To stop the agent, run
+
+    .. code-block::
+
+        # systemctl stop f5-openstack-agent.service
 
 
 Usage
