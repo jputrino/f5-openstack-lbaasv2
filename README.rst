@@ -91,8 +91,8 @@ You can download the driver and agent release packages directly from F5 Networks
 
 .. code-block:: text
 
-    $ pip install git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver@2.0.1a1
-    $ pip install git+https://github.com/F5Networks/f5-openstack-agent@2.0.1a1
+    $ pip install git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver@v2.0.1a1
+    $ pip install git+https://github.com/F5Networks/f5-openstack-agent@v2.0.1a1
 
 
 Configuration
