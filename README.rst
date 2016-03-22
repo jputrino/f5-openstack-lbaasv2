@@ -1,3 +1,4 @@
+
 .. raw:: html
 
    <!--
@@ -58,36 +59,43 @@ Before You Begin
 ----------------
 For release |release|, you will need to install the following dependencies your Neutron controller host *before* installing the F5 LBaaSv2 plugin packages.
 
-- F5 SDK
+.. topic:: Install the F5 SDK
 
-.. code-block:: shell
+    .. code-block:: shell
 
-    $ pip install f5-sdk
+        $ pip install f5-sdk
 
-- Download the F5 LBaaSv2 service provider `package <https://github.com/F5Networks/neutron-lbaas/releases/download/v2.0.1a1/f5.tgz>`_.
+.. topic:: Download the F5 LBaaSv2 service provider package and add it to the python path for ``neutron_lbaas``.
 
-.. note::
+    Download from GitHub
 
-    The service provider package must be added to the python path for neutron_lbaas.
+    .. code-block:: shell
 
-    CentOS:
+        $ curl -O https://github.com/F5Networks/neutron-lbaas/releases/download/v2.0.1a1/f5.tgz
 
-    .. code-block:: text
-
-        # tar xzf f5.tgz -C /usr/lib/python2.7/site–packages/neutron_lbaas/drivers
-
-    Ubuntu:
-
+    Install on CentOS:
 
     .. code-block:: text
 
-        # tar xzf f5.tgz –C /usr/local/lib/python2.7/dist-packages/neutron_lbaas/drivers
+        # tar xvf f5.tgz -C /usr/lib/python2.7/site-packages/neutron_lbaas/drivers/
+
+    Install on Ubuntu:
+
+
+    .. code-block:: text
+
+        # tar xvf f5.tgz –C /usr/local/lib/python2.7/dist-packages/neutron_lbaas/drivers/
 
 
 Installation
 ------------
 
 You can download the driver and agent release packages directly from F5 Networks' GitHub repos using pip.
+
+.. note::
+
+    You must have both ``pip`` and ``git`` installed on your machine in order to use these commands. It may be necessary to use ``sudo``, depending on your environment.
+
 
 .. code-block:: text
 
@@ -126,7 +134,7 @@ You will need to make a few configurations in your Neutron environment in order 
 F5 LBaaSv2 Plugin
 ~~~~~~~~~~~~~~~~~
 
-The configurable options supported in this release are noted below. See the agent configuration file -- :file:`f5-openstack-agent.ini` -- for more information.
+The configurable options supported in this release are noted below. See the agent configuration file -- :file:`/etc/neutron/services/f5-openstack-agent.ini` -- for more information.
 
 .. table::
 
@@ -176,13 +184,21 @@ The configurable options supported in this release are noted below. See the agen
 
 
 
-.. note::
+.. tip::
 
     To stop the agent, run
 
-    .. code-block::
+    .. code-block:: text
 
         # systemctl stop f5-openstack-agent.service
+
+
+.. topic:: Troubleshooting
+
+    If the agent will not run and/or you experience errors, be sure of the following:
+
+    - The icontrol hostname, username, and password have been entered correctly.
+    - All config settings pertaining to L2 and tunneling (e.g., ``5_vtep_folder``, ``f5_vtep_selfip_name``, tunnel types) are commented out.
 
 
 Usage
@@ -322,6 +338,6 @@ in this project.
 
 
 .. |Docs Build Status| image:: https://readthedocs.org/projects/f5-openstack-lbaasv2/badge/?version=latest
-:target: http://f5-openstack-lbaasv2.readthedocs.org/en/latest/?badge=latest
-:alt: Documentation Status
+    :target: http://f5-openstack-lbaasv2.readthedocs.org/en/latest/?badge=latest
+    :alt: Documentation Status
 
