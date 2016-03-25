@@ -132,7 +132,7 @@ You will need to make a few configurations in your Neutron environment in order 
 3. Restart the ``neutron-server`` service.
 
 F5® LBaaSv2 Plugin
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 The configurable options supported in this release are noted below. See the agent configuration file -- :file:`/etc/neutron/services/f5-openstack-agent.ini` -- for more information.
 
