@@ -12,11 +12,11 @@
     THIS IS AN UNSUPPORTED ALPHA RELEASE.
 
 
-This release provides an implementation of the OpenStack Neutron LBaaS 2.0 driver and agent to support F5 Networks BIG-IP® systems.
+This release provides an implementation of the OpenStack Neutron LBaaS 2.0 driver and agent to support F5 Networks® BIG-IP® systems.
 
 Release Highlights
 ------------------
-Support for creating, updating, and deleting LBaaS v2 load balancers, listeners, pools, members, and health monitors. See :ref:`Getting Started with F5 OpenStack LBaaSv2 <getting-started-lbaasv2>` for code examples.
+Support for creating, updating, and deleting LBaaS v2 load balancers, listeners, pools, members, and health monitors. See :ref:`Getting Started with F5® OpenStack LBaaSv2 <getting-started-lbaasv2>` for code examples.
 
 Caveats
 -------

@@ -9,7 +9,7 @@
 * Details: For enhancements, fill out the template below.
 
 #### OpenStack Release
-<The earliest release in which you would like to see the enhancement>
+<The earliest OpenStack release in which you would like to see the enhancement>
 
 #### Description
 <Describe the enhancement request in detail>
@@ -18,7 +18,7 @@
 * Details: For bugs, fill out the template below.
 
 #### Agent Version
-<Fill in the version you have installed, such as 1.0.12>
+<Fill in the version you have installed, such as 2.0.1>
 
 #### Operating System
 <Fill in the host OS of the machine running the agent, such as Ubuntu 14.04>
@@ -27,10 +27,11 @@
 <Fill in the OpenStack release, such as Kilo>
 
 #### Description
-<Describe the bug in detail, steps taken prior to encountering the issue, yand a short explanation of you have deployed openstack and F5 agent>
+<Describe the bug in detail, steps taken prior to encountering the issue; 
+screenshots are always welcome, as are logs.>
 
 #### Deployment
-<Explain in reasonable detail your OpenStack deployment, the F5 OpenStack agent, and BIG-IP(s)>
-<Example: Single OpenStack controller with one F5 agent managing a cluster of 4 BIG-IP VEs>
-<Example: Three OpenStack controllers in HA, each with one standalone F5 agent managing a single BIG-IP appliance>
+<Explain in reasonable detail your OpenStack deployment, the F5® OpenStack agent, and BIG-IP®(s)>
+<Example: Single OpenStack controller with one F5® agent managing a cluster of 4 BIG-IP® VEs>
+<Example: Three OpenStack controllers in HA, each with one standalone F5® agent managing a single BIG-IP® appliance>
 
