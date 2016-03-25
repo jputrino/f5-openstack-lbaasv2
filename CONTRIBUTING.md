@@ -52,7 +52,7 @@ Running those tests is even easier.
 $ py.test --cov ./ --cov-report=html
 $ open htmlcov/index.html
 ```
-If you are running our functional tests you will need a real BIG-IP to run them against, but you can get one of those pretty easily in [Amazon EC2](https://aws.amazon.com/marketplace/pp/B00JL3UASY/ref=srh_res_product_title?ie=UTF8&sr=0-10&qid=1449332167461).
+If you are running our functional tests you will need a real BIG-IP® to run them against, but you can get one of those pretty easily in [Amazon EC2](https://aws.amazon.com/marketplace/pp/B00JL3UASY/ref=srh_res_product_title?ie=UTF8&sr=0-10&qid=1449332167461).
 
 ## License
  
@@ -70,4 +70,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
  
 ### Contributor License Agreement
-Individuals or business entities who contribute to this project must have completed and submitted the [F5 Contributor License Agreement](http://f5networks.github.io/f5-openstack-docs/cla_landing/index.html) to Openstack_CLA@f5.com prior to their code submission being included in this project.
+Individuals or business entities who contribute to this project must have completed and submitted the [F5® Contributor License Agreement](http://f5networks.github.io/f5-openstack-docs/cla_landing/index.html) to Openstack_CLA@f5.com prior to their code submission being included in this project.

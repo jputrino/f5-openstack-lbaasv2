@@ -26,8 +26,8 @@ f5-openstack-lbaasv2
 
 Introduction
 ------------
-This repo contains the code for F5's OpenStack LBaaSv2 plugin. The LBaaSv2
-plugin allows you to orchestrate BIG-IP load balancing services – including
+This repo contains the code for F5®'s OpenStack LBaaSv2 plugin. The LBaaSv2
+plugin allows you to orchestrate BIG-IP® load balancing services – including
 virtual IPs, pools, device service groups, and health monitoring – in an
 OpenStack environment.
 
@@ -50,22 +50,22 @@ This plugin can be used with OpenStack releases from Liberty forward. If you are
 
 Subprojects
 -----------
-The LBaaSv2 plugin comprises packages from different F5 Networks projects:
+The LBaaSv2 plugin comprises packages from different F5 Networks® projects:
 
  - `F5Networks/f5-openstack-lbaasv2-driver <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_
  - `F5Networks/f5-openstack-agent <https://github.com/F5Networks/f5-openstack-agent>`_
 
 Before You Begin
 ----------------
-For release |release|, you will need to install the following dependencies your Neutron controller host *before* installing the F5 LBaaSv2 plugin packages.
+For release |release|, you will need to install the following dependencies your Neutron controller host *before* installing the F5® LBaaSv2 plugin packages.
 
-.. topic:: Install the F5 SDK
+.. topic:: Install the F5® SDK
 
     .. code-block:: shell
 
         $ pip install f5-sdk
 
-.. topic:: Download the F5 LBaaSv2 service provider package and add it to the python path for ``neutron_lbaas``.
+.. topic:: Download the F5® LBaaSv2 service provider package and add it to the python path for ``neutron_lbaas``.
 
     Download from GitHub
 
@@ -109,7 +109,7 @@ Configuration
 Neutron
 ~~~~~~~
 
-You will need to make a few configurations in your Neutron environment in order to use the F5 OpenStack LBaasv2 plugin.
+You will need to make a few configurations in your Neutron environment in order to use the F5® OpenStack LBaasv2 plugin.
 
 1. Edit :file:`/etc/neutron/neutron_lbaas.conf` and add F5 as the service provider. Comment out, or remove the default tag from, any other ``LOADBALANCERV2`` entries.
 
@@ -131,8 +131,8 @@ You will need to make a few configurations in your Neutron environment in order 
 
 3. Restart the ``neutron-server`` service.
 
-F5 LBaaSv2 Plugin
-~~~~~~~~~~~~~~~~~
+F5® LBaaSv2 Plugin
+~~~~~~~~~~~~~~~~~~
 
 The configurable options supported in this release are noted below. See the agent configuration file -- :file:`/etc/neutron/services/f5-openstack-agent.ini` -- for more information.
 
@@ -166,7 +166,7 @@ The configurable options supported in this release are noted below. See the agen
     f5_sync_mode = replication
 
 
-2. Add the IP address, username and password of your BIG-IP to the agent config file. This ensures that the agent can communicate with the BIG-IP.
+2. Add the IP address, username and password of your BIG-IP® to the agent config file. This ensures that the agent can communicate with the BIG-IP®.
 
 .. code-block:: text
 
@@ -197,7 +197,7 @@ The configurable options supported in this release are noted below. See the agen
 
     If the agent will not run and/or you experience errors, be sure of the following:
 
-    - The icontrol hostname, username, and password have been entered correctly.
+    - The iControl® hostname, username, and password have been entered correctly.
     - All config settings pertaining to L2 and tunneling (e.g., ``5_vtep_folder``, ``f5_vtep_selfip_name``, tunnel types) are commented out.
 
 
@@ -260,7 +260,7 @@ Test
 ----
 Before you open a pull request, your code must have passing
 `pytest <http://pytest.org>`__ unit tests. In addition, you should
-include a set of functional tests written to use a real BIG-IP device
+include a set of functional tests written to use a real BIG-IP® device
 for testing. Information on how to run our set of tests is included
 below.
 
@@ -331,7 +331,7 @@ limitations under the License.
 Contributor License Agreement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Individuals or business entities who contribute to this project must
-have completed and submitted the `F5 Contributor License
+have completed and submitted the `F5® Contributor License
 Agreement <http://f5-openstack-docs.rtfd.org/en/latest/cla_landing.html>`_
 to Openstack_CLA@f5.com prior to their code submission being included
 in this project.

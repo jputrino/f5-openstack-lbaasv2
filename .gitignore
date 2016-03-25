@@ -1,5 +1,6 @@
 ### ignore sphinx / python stuff
 .idea/*
-.venv/*
+venv/*
 docs/_build/*
 docs/_htmlbuild/*
+docs/target
