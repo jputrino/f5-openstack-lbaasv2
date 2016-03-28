@@ -198,7 +198,7 @@ The configurable options supported in this release are noted below. See the agen
     If the agent will not run and/or you experience errors, be sure of the following:
 
     - The iControl® hostname, username, and password have been entered correctly.
-    - All config settings pertaining to L2 and tunneling (e.g., ``5_vtep_folder``, ``f5_vtep_selfip_name``, tunnel types) are commented out.
+    - All config settings pertaining to L2 and tunneling (e.g., ``f5_vtep_folder``, ``f5_vtep_selfip_name``, tunnel types) are commented out.
 
 
 Usage
