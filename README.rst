@@ -111,21 +111,23 @@ Neutron
 
 You will need to make a few configurations in your Neutron environment in order to use the F5® OpenStack LBaasv2 plugin.
 
-1. Edit :file:`/etc/neutron/neutron_lbaas.conf` and add F5 as the service provider. Comment out, or remove the default tag from, any other ``LOADBALANCERV2`` entries.
+1. Edit the ``[service_providers]`` section of :file:`/etc/neutron/neutron_lbaas.conf` and add ``F5`` as the service provider. Comment out, or remove the default tag from, any other ``LOADBALANCERV2`` entries.
 
     .. code-block:: text
 
         $ vi /etc/neutron/neutron_lbaas.conf
         ...
+        [service_providers]
         service_provider = LOADBALANCERV2:F5NetworksTest:neutron_lbaas.drivers.f5.driver_v2.F5LBaaSV2DriverTest:default
         ...
 
-2. Edit :file:`/etc/neutron/neutron.conf` and add the ``lbaasv2`` service plugin. If there is an entry for LBaaSv1 (``lbaas``), remove it.
+2. Edit the ``[DEFAULT]`` section of :file:`/etc/neutron/neutron.conf` and add the ``lbaasv2`` service plugin. If there is an entry for LBaaSv1 (``lbaas``), remove it.
 
     .. code-block:: text
 
         $ vi /etc/neutron/neutron.conf
         ...
+        [DEFAULT]
         service_plugins = [already defined plugins],neutron_lbaas.services.loadbalancer.plugin.LoadBalancerPluginv2
         ...
 
@@ -135,12 +137,12 @@ You will need to make a few configurations in your Neutron environment in order 
 
         $ service neutron-server restart // Ubuntu
         $ systemctl restart neutron-server // CentOS
-        
+
 
 F5® LBaaSv2 Plugin
 ~~~~~~~~~~~~~~~~~~
 
-The configurable options supported in this release are noted below. See the agent configuration file -- :file:`/etc/neutron/services/f5-openstack-agent.ini` -- for more information.
+The configurable options supported in this release are noted below. See the agent configuration file -- :file:`/etc/neutron/services/f5/f5-openstack-agent.ini` -- for more information.
 
 .. table::
 
