@@ -131,6 +131,12 @@ You will need to make a few configurations in your Neutron environment in order 
 
 3. Restart the ``neutron-server`` service.
 
+    .. code-block:: text
+
+        $ service neutron-server restart // Ubuntu
+        $ systemctl restart neutron-server // CentOS
+        
+
 F5® LBaaSv2 Plugin
 ~~~~~~~~~~~~~~~~~~
 
