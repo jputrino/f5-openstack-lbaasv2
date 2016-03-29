@@ -37,7 +37,7 @@ The latest release is v |release|. See the :ref:`Release Notes <release-notes>` 
 
 .. warning::
 
-    Alpha and beta releases are **unsupported** development releases. We welcome feedback and bug reporting for these releases; see :ref:`Filing Issues <filing-issues>` for more information.
+    Alpha and beta releases are **unsupported** development releases. We welcome feedback and bug reporting for these releases; see `Filing Issues <https://github.com/F5Networks/f5-openstack-lbaasv2#filing-issues>`_ for more information.
 
 
 Documentation
@@ -236,8 +236,8 @@ The following restrictions apply for Neutron LBaaS objects in this release.
     +----------------+---------------+----------------------------------------+
 
 
-.. _filing-issues:
 
+.. _filing-issues:
 Filing Issues
 -------------
 If you find an issue we would love to hear about it. Please go to the
