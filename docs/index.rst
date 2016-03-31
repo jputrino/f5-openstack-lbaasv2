@@ -6,6 +6,10 @@
 F5® OpenStack LBaaSv2
 =====================
 
+.. raw:: html
+
+    <script async defer src="https://f5-openstack-slack.herokuapp.com/slackin.js"></script>
+
 .. toctree::
     :hidden:
 
@@ -20,5 +24,5 @@ F5® OpenStack LBaaSv2
 
 .. include:: ../README.rst
     :start-line: 46
-    :end-line: 352
+    :end-line: 238
 

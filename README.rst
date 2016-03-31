@@ -22,7 +22,7 @@
 f5-openstack-lbaasv2
 ====================
 
-|Docs Build Status|
+|Docs Build Status| |slack badge|
 
 Introduction
 ------------
@@ -306,10 +306,6 @@ step 1 in the Unit Test section).
     $ flake8 ./
 
 
-Contact
--------
-f5_openstack_lbaasv2@f5.com
-
 Copyright
 ---------
 Copyright 2015-2016 F5 Networks Inc.
@@ -349,3 +345,6 @@ in this project.
     :target: http://f5-openstack-lbaasv2.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
 
+.. |slack badge| image:: https://f5-openstack-slack.herokuapp.com/badge.svg
+    :target: https://f5-openstack-slack.herokuapp.com/
+    :alt: Slack
