@@ -22,7 +22,7 @@
 f5-openstack-lbaasv2
 ====================
 
-|Docs Build Status|
+|Docs Build Status| |slack badge|
 
 Introduction
 ------------
@@ -37,7 +37,7 @@ The latest release is v |release|. See the :ref:`Release Notes <release-notes>` 
 
 .. warning::
 
-    Alpha and beta releases are **unsupported** development releases. We welcome feedback and bug reporting for these releases; see :ref:`Filing Issues <filing-issues>` for more information.
+    Alpha and beta releases are **unsupported** development releases. We welcome feedback and bug reporting for these releases; see `Filing Issues <https://github.com/F5Networks/f5-openstack-lbaasv2#filing-issues>`_ for more information.
 
 
 Documentation
@@ -111,30 +111,38 @@ Neutron
 
 You will need to make a few configurations in your Neutron environment in order to use the F5® OpenStack LBaasv2 plugin.
 
-1. Edit :file:`/etc/neutron/neutron_lbaas.conf` and add F5 as the service provider. Comment out, or remove the default tag from, any other ``LOADBALANCERV2`` entries.
+1. Edit the ``[service_providers]`` section of :file:`/etc/neutron/neutron_lbaas.conf` and add ``F5`` as the service provider. Comment out, or remove the default tag from, any other ``LOADBALANCERV2`` entries.
 
     .. code-block:: text
 
         $ vi /etc/neutron/neutron_lbaas.conf
         ...
+        [service_providers]
         service_provider = LOADBALANCERV2:F5NetworksTest:neutron_lbaas.drivers.f5.driver_v2.F5LBaaSV2DriverTest:default
         ...
 
-2. Edit :file:`/etc/neutron/neutron.conf` and add the ``lbaasv2`` service plugin. If there is an entry for LBaaSv1 (``lbaas``), remove it.
+2. Edit the ``[DEFAULT]`` section of :file:`/etc/neutron/neutron.conf` and add the ``lbaasv2`` service plugin. If there is an entry for LBaaSv1 (``lbaas``), remove it.
 
     .. code-block:: text
 
         $ vi /etc/neutron/neutron.conf
         ...
+        [DEFAULT]
         service_plugins = [already defined plugins],neutron_lbaas.services.loadbalancer.plugin.LoadBalancerPluginv2
         ...
 
 3. Restart the ``neutron-server`` service.
 
+    .. code-block:: text
+
+        $ service neutron-server restart // Ubuntu
+        $ systemctl restart neutron-server // CentOS
+
+
 F5® LBaaSv2 Plugin
 ~~~~~~~~~~~~~~~~~~
 
-The configurable options supported in this release are noted below. See the agent configuration file -- :file:`/etc/neutron/services/f5-openstack-agent.ini` -- for more information.
+The configurable options supported in this release are noted below. See the agent configuration file -- :file:`/etc/neutron/services/f5/f5-openstack-agent.ini` -- for more information.
 
 .. table::
 
@@ -198,7 +206,7 @@ The configurable options supported in this release are noted below. See the agen
     If the agent will not run and/or you experience errors, be sure of the following:
 
     - The iControl® hostname, username, and password have been entered correctly.
-    - All config settings pertaining to L2 and tunneling (e.g., ``5_vtep_folder``, ``f5_vtep_selfip_name``, tunnel types) are commented out.
+    - All config settings pertaining to L2 and tunneling (e.g., ``f5_vtep_folder``, ``f5_vtep_selfip_name``, tunnel types) are commented out.
 
 
 Usage
@@ -228,8 +236,8 @@ The following restrictions apply for Neutron LBaaS objects in this release.
     +----------------+---------------+----------------------------------------+
 
 
-.. _filing-issues:
 
+.. _filing-issues:
 Filing Issues
 -------------
 If you find an issue we would love to hear about it. Please go to the
@@ -298,10 +306,6 @@ step 1 in the Unit Test section).
     $ flake8 ./
 
 
-Contact
--------
-f5_openstack_lbaasv2@f5.com
-
 Copyright
 ---------
 Copyright 2015-2016 F5 Networks Inc.
@@ -341,3 +345,6 @@ in this project.
     :target: http://f5-openstack-lbaasv2.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
 
+.. |slack badge| image:: https://f5-openstack-slack.herokuapp.com/badge.svg
+    :target: https://f5-openstack-slack.herokuapp.com/
+    :alt: Slack
