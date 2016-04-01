@@ -16,7 +16,7 @@ This release provides an implementation of the OpenStack Neutron LBaaS 2.0 drive
 
 Release Highlights
 ------------------
-Support for creating, updating, and deleting LBaaS v2 load balancers, listeners, pools, members, and health monitors. See :ref:`Getting Started with F5® OpenStack LBaaSv2 <getting-started-lbaasv2>` for code examples.
+This release provides initial functionality with a limited set of configuration objects for use by OpenStack Neutron LBaaSv2 service plugin. It has support for L3 binding and preliminary support for performing L2 orchestration.
 
 Caveats
 -------
