@@ -74,7 +74,7 @@ author = u'F5 Networks'
 # The short X.Y version.
 version = u'2.0.1'
 # The full version, including alpha/beta/rc tags.
-release = u'2.0.1a1'
+release = u'2.0.1a2'
 
 # OpenStack release
 openstack_release = "Liberty"
