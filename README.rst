@@ -65,7 +65,13 @@ For release |release|, you will need to install the following dependencies your 
 
     .. code-block:: shell
 
-        $ curl -O https://github.com/F5Networks/neutron-lbaas/releases/download/v2.0.1a1/f5.tgz
+        $ curl -O https://github
+        .com/F5Networks/neutron-lbaas/releases/download/v2.0.1a2/f5.tgz
+
+    .. note::
+
+        If you get a redirect error when using the above ``curl`` command,
+        add ``-L``.
 
     Install on CentOS:
 
