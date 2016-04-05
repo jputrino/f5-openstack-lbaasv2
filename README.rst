@@ -59,19 +59,19 @@ Before You Begin
 ----------------
 For release |release|, you will need to install the following dependencies your Neutron controller host *before* installing the F5® LBaaSv2 plugin packages.
 
-.. topic:: Install the F5® SDK
-
-    .. code-block:: shell
-
-        $ pip install f5-sdk
-
 .. topic:: Download the F5® LBaaSv2 service provider package and add it to the python path for ``neutron_lbaas``.
 
     Download from GitHub
 
     .. code-block:: shell
 
-        $ curl -O https://github.com/F5Networks/neutron-lbaas/releases/download/v2.0.1a1/f5.tgz
+        $ curl -O https://github
+        .com/F5Networks/neutron-lbaas/releases/download/v2.0.1a2/f5.tgz
+
+    .. note::
+
+        If you get a redirect error when using the above ``curl`` command,
+        add ``-L``.
 
     Install on CentOS:
 
@@ -80,7 +80,6 @@ For release |release|, you will need to install the following dependencies your 
         # tar xvf f5.tgz -C /usr/lib/python2.7/site-packages/neutron_lbaas/drivers/
 
     Install on Ubuntu:
-
 
     .. code-block:: text
 
