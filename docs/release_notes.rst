@@ -1,35 +1,32 @@
 .. toctree::
     :hidden:
-    :maxdepth: 1
+
 
 .. _release-notes:
 
-|release| Release Notes
-=======================
+Release Notes v |release|
+=========================
 
 .. warning::
 
-    THIS IS AN UNSUPPORTED ALPHA RELEASE.
+    THIS IS AN UNSUPPORTED ALPHA RELEASE. Available features and functionality are limited, as noted below.
 
-
-This release provides an implementation of the OpenStack Neutron LBaaS 2.0 driver and agent to support F5 Networks® BIG-IP® systems.
+This release provides an implementation of the OpenStack Neutron LBaaS |version| driver and agent to support F5 Networks® BIG-IP® systems.
 
 Release Highlights
 ------------------
-This release provides initial functionality with a limited set of configuration objects for use by OpenStack Neutron LBaaSv2 service plugin. It has support for L3 binding and preliminary support for performing L2 orchestration.
+This release provides a limited set of configuration objects for use by OpenStack Neutron LBaaSv2 service plugin. It has support for L3 binding and L2 orchestration for standalone BIG-IP® devices.
 
-Caveats
--------
+Available Features
+~~~~~~~~~~~~~~~~~~
 
-.. warning::
+.. include:: includes/ref_features.rst
+    :start-line: 3
 
-    Functionality is limited in this release, as noted below.
+Restrictions
+~~~~~~~~~~~~
+
+.. include:: includes/ref_restrictions.rst
+    :start-line: 3
 
 
-.. include:: ../README.rst
-    :start-line: 144
-    :end-line: 165
-
-.. include:: ../README.rst
-    :start-line: 222
-    :end-line: 238
