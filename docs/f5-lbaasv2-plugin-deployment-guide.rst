@@ -8,7 +8,7 @@ v |release|
 
 Before You Begin
 ----------------
-For release v |release|, you will need to install the following dependencies your Neutron controller host *before* installing the F5® LBaaSv2 plugin packages.
+For release v |release|, you will need to install the following dependencies your Neutron controller *before* installing the F5® LBaaSv2 plugin packages.
 
 .. topic:: Download the F5® LBaaSv2 service provider package and add it to the python path for ``neutron_lbaas``.
 
@@ -86,8 +86,8 @@ In the ``[service_providers]`` section, add ``F5NetworksTest`` as the lbaasv2 se
 
     .. code-block:: text
 
-        $ service neutron-server restart // Ubuntu
-        $ systemctl restart neutron-server // CentOS
+        $ service neutron-server restart    \\ Ubuntu
+        $ systemctl restart neutron-server  \\ CentOS
 
 
 F5® LBaaSv2 Plugin
@@ -138,8 +138,8 @@ The configurable options supported in this release are noted below. See the agen
 
 .. code-block:: text
 
-    # systemctl enable f5-openstack-agent.service // Ubuntu
-    # systemctl start f5-openstack-agent.service  // CentOS
+    # service f5-openstack-agent enable            \\ Debian/Ubuntu
+    # systemctl start f5-openstack-agent           \\ RedHat/CentOS
 
 
 .. tip::
@@ -148,15 +148,8 @@ The configurable options supported in this release are noted below. See the agen
 
     .. code-block:: text
 
-        # systemctl stop f5-openstack-agent.service
-
-
-.. topic:: Troubleshooting
-
-    If the agent will not run and/or you experience errors, be sure of the following:
-
-    - The iControl® hostname, username, and password have been entered correctly.
-    - All config settings pertaining to L2 and tunneling (e.g., ``f5_vtep_folder``, ``f5_vtep_selfip_name``, tunnel types) are commented out.
+        # service f5-openstack-agent stop            \\ Debian/Ubuntu
+        # systemctl stop f5-openstack-agent.service  \\ RedHat/CentOS
 
 
 Usage
@@ -164,9 +157,7 @@ Usage
 
 .. note::
 
-    OpenStack Horizon does not currently support LBaaSv2 services. All LBaaSv2 configurations must be made via the CLI or REST API. The LBaaSv2 CLI commands all begin with ``lbaas``.
-
-    `OpenStack CLI Documentation <http://docs.openstack.org/cli-reference/neutron.html>`_
+    The OpenStack LBaaSv2 CLI commands begin with ``lbaas``. See the `OpenStack CLI documentation <http://docs.openstack.org/cli-reference/neutron.html>`_ for more information.
 
 
 The following restrictions apply for Neutron LBaaS objects in this release.
@@ -184,3 +175,10 @@ The following restrictions apply for Neutron LBaaS objects in this release.
     |                |               | (``neutron lbaas-loadbalancer-stats``) |
     +----------------+---------------+----------------------------------------+
 
+Troubleshooting
+---------------
+
+.. include:: troubleshooting-general.rst
+    :start-line: 3
+
+.. include:: troubleshooting-f5agent.rst
