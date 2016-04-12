@@ -5,7 +5,7 @@ To troubleshoot problems with the F5® LBaaSv1 driver or an F5® agent process, 
 
 .. topic:: Set the DEBUG log level output for the f5-openstack-agent:
 
-    .. code-block::
+    .. code-block:: text
 
         # vi /etc/neutron/services/f5/f5-openstack-agent.ini
 
@@ -15,11 +15,11 @@ To troubleshoot problems with the F5® LBaaSv1 driver or an F5® agent process, 
         debug = True
         ...
 
+
 .. topic:: Set the DEBUG log level output for Neutron:
 
-    .. code-block::
+    .. code-block:: text
 
         # vi /etc/neutron/neutron.conf
         ???
-
 

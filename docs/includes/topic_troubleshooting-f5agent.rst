@@ -2,7 +2,7 @@ Troubleshooting the F5® OpenStack Agent
 ---------------------------------------
 
 The ``f5-openstack-agent`` is not running
-`````````````````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the ``f5-openstack-agent`` doesn't appear in the Horizon agent list or when you run ``neutron agent-list``, the agent is not running.
 

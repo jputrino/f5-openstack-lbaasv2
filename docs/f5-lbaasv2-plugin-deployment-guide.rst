@@ -1,10 +1,16 @@
-User Guide
-==========
+.. _deployment-guide:
+
+F5® OpenStack LBaaSv2 Plugin Deployment Guide
+=============================================
+
+.. toctree::
+    :hidden:
+
 
 Release
 -------
 
-The latest release, v |release|, is compatible with OpenStack |openstack|. For more information regarding compatibility, versioning, and support, please see the `F5 OpenStack Releases and Support Matrix <f5-openstack-docs.rtfd.org/releases-and-versioning.html>`_.
+The latest release, v |release|, is compatible with OpenStack |openstack|. For more information regarding compatibility, versioning, and support, please see the `F5® OpenStack Releases and Support Matrix <f5-openstack-docs.rtfd.org/en/latest/releases-and-versioning.html>`_.
 
 Before You Begin
 ----------------
@@ -53,7 +59,7 @@ Usage
 Restrictions
 ~~~~~~~~~~~~
 
-.. include:: includes/topic_restrictions.rst
+.. include:: includes/ref_restrictions.rst
     :start-line: 3
 
 Examples
@@ -69,3 +75,4 @@ Troubleshooting
     :start-line: 3
 
 .. include:: includes/topic_troubleshooting-f5agent.rst
+    :start-line: 3

@@ -13,16 +13,14 @@ F5® OpenStack LBaaSv2
 .. toctree::
     :hidden:
 
-    self
     release_notes
-    Code example <getting-started-lbaasv2>
+    Getting Started <getting-started-lbaasv2>
+    Deployment Guide <f5-lbaasv2-plugin-deployment-guide>
 
 .. include:: ../README.rst
     :start-line: 26
-    :end-line: 42
-
+    :end-line: 53
 
 .. include:: ../README.rst
-    :start-line: 46
-    :end-line: 238
+    :start-line: 82
 

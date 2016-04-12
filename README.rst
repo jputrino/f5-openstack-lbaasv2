@@ -28,6 +28,13 @@ Introduction
 ------------
 This repo contains the documentation for F5®'s OpenStack LBaaSv2 plugin. The LBaaSv2 plugin allows you to orchestrate BIG-IP® load balancing services – including virtual IPs, pools, device service groups, and health monitoring – in an OpenStack environment.
 
+Subprojects
+-----------
+The LBaaSv2 plugin comprises packages from different F5 Networks® projects:
+
+ - `F5Networks/f5-openstack-lbaasv2-driver <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_
+ - `F5Networks/f5-openstack-agent <https://github.com/F5Networks/f5-openstack-agent>`_
+
 Releases
 --------
 The latest release is v |release|. See the :ref:`Release Notes <release-notes>` for more information.
@@ -38,18 +45,11 @@ The latest release is v |release|. See the :ref:`Release Notes <release-notes>` 
 
 Documentation
 -------------
-See the `Deployment Guide <http://f5-openstack-lbaasv2.rtfd.org/en/latest/f5-lbaasv2-plugin-deployment-guide.html>`_ for installation and configuration instructions.
+See the :doc:`Deployment Guide <deployment-guide>` for installation and configuration instructions.
 
 Compatibility
 -------------
-This plugin can be used with OpenStack releases from Liberty forward. If you are using an earlier release, you'll have to use the `LBaaSv1 plugin <https://github.com/F5Networks/openstack-f5-lbaasv1>`_.
-
-Subprojects
------------
-The LBaaSv2 plugin comprises packages from different F5 Networks® projects:
-
- - `F5Networks/f5-openstack-lbaasv2-driver <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_
- - `F5Networks/f5-openstack-agent <https://github.com/F5Networks/f5-openstack-agent>`_
+This plugin is compatible with OpenStack |openstack|. If you are using Kilo or earlier, you'll have to use the `LBaaSv1 plugin <https://github.com/F5Networks/openstack-f5-lbaasv1>`_. See the `F5® OpenStack Releases and Support Matrix <f5-openstack-docs.rtfd.org/en/latest/releases-and-versioning.html>`_ for more information.
 
 .. _for-developers:
 
@@ -78,7 +78,7 @@ See `Contributing <https://github.com/F5Networks/f5-openstack-lbaasv2/blob/maste
 
 Copyright
 ---------
-Copyright 2015-2016 F5 Networks Inc.
+Copyright 2015-2016 F5 Networks, Inc.
 
 Support
 -------
