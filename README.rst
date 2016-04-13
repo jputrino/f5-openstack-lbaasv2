@@ -45,7 +45,7 @@ The latest release is v |release|. See the :ref:`Release Notes <release-notes>` 
 
 Documentation
 -------------
-See the :doc:`Deployment Guide <deployment-guide>` for installation and configuration instructions.
+See the `Deployment Guide <http://f5-openstack-lbaasv2.rtfd.org/en/latest//f5-lbaasv2-plugin-deployment-guide.html>`_ for installation and configuration instructions.
 
 Compatibility
 -------------
