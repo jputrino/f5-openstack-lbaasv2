@@ -5,7 +5,7 @@ You will need to make a few configurations in your Neutron environment in order 
 
 1. Edit the Neutron LBaaS config file -- :file:`/etc/neutron/neutron_lbaas.conf`.
 
-    In the ``[service_providers]`` section, add ``F5NetworksTest`` as the lbaasv2 service provider as shown below.
+    In the ``[service_providers]`` section, add ``F5Networks`` as the lbaasv2 service provider as shown below.
 
     .. code-block:: text
         :emphasize-lines: 4
@@ -13,7 +13,7 @@ You will need to make a few configurations in your Neutron environment in order 
         $ vi /etc/neutron/neutron_lbaas.conf
         ...
         [service_providers]
-        service_provider = LOADBALANCERV2:F5NetworksTest:neutron_lbaas.drivers.f5.driver_v2.F5LBaaSV2DriverTest:default
+        service_provider = LOADBALANCERV2:F5Networks:neutron_lbaas.drivers.f5.driver_v2.F5LBaaSV2Driver:default
         ...
 
     .. note::
