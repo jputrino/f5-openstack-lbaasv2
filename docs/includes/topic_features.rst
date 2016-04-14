@@ -58,7 +58,7 @@ L3 segmentation modes allow you to provision LBaaS services for BIG-IP® device(
 
 - ``advertised_tunnel_types``: Tunnel types
 
-    A comma-separated list of tunnel types to report as available from the F5 agent, as well as to send via ``tunnel_sync`` rpc messages to compute nodes.
+    A comma-separated list of tunnel types to report as available from the F5®agent, as well as to send via ``tunnel_sync`` rpc messages to compute nodes.
 
     .. code-block:: text
 

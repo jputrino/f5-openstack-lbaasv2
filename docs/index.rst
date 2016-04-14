@@ -11,6 +11,7 @@ F5® OpenStack LBaaSv2
     release_notes
     Getting Started <getting-started-lbaasv2>
     Deployment Guide <f5-lbaasv2-plugin-deployment-guide>
+    troubleshooting
 
 .. include:: ../README.rst
     :start-line: 26

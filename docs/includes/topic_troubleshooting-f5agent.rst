@@ -1,10 +1,10 @@
 Troubleshooting the F5® OpenStack Agent
 ---------------------------------------
 
-The ``f5-openstack-agent`` is not running
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F5® Agent is not running
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the ``f5-openstack-agent`` doesn't appear in the Horizon agent list or when you run ``neutron agent-list``, the agent is not running.
+If ``f5-openstack-agent`` doesn't appear in the Horizon agent list, or when you run ``neutron agent-list``, the agent is not running.
 
 Here are a few things you can try:
 
@@ -12,7 +12,7 @@ Here are a few things you can try:
 
     .. code-block:: text
 
-        # less /var/log/neutron/f5-openstack-agent.log
+        $ less /var/log/neutron/f5-openstack-agent.log
 
 2. Check the status of the f5-openstack-agent service:
 
@@ -22,17 +22,10 @@ Here are a few things you can try:
         # systemctl status f5-openstack-agent.service \\ RedHat/CentOS
 
 
-3. Make sure you don't have more than one agent with the same ``environment_prefix`` running on the same host.
-
-    .. code-block:: text
-
-        # environment_prefix = uuid \\ This is the default setting
+3. Make sure you can connect to the BIG-IP® and that the iControl® hostname, username, and password in the config file are correct.
 
 
-4. Make sure you can connect to the BIG-IP® and that the iControl® hostname, username, and password in the config file are correct.
-
-
-5. If you're not using vtep, comment out (#) the lines shown below in the agent config file.
+4. If you're using ``global_routed_mode``, comment out (#) the ``vtep`` lines (shown below) in the agent config file.
 
     .. code-block:: text
 
@@ -40,3 +33,38 @@ Here are a few things you can try:
         #f5_vtep_folder = 'Common'
         #f5_vtep_selfip_name = 'vtep'
         #
+
+5. If you're using L2 segmentation, make sure the ``advertised_tunnel_types`` setting matches the ``provider:network_type``.
+
+    .. code-block:: text
+        :emphasize-lines: 9
+
+        $ neutron net-show <network_name>
+        +---------------------------+--------------------------------------+
+        | Field                     | Value                                |
+        +---------------------------+--------------------------------------+
+        | admin_state_up            | True                                 |
+        | id                        | 05f61e74-37e0-4c30-a664-762dfef1a221 |
+        | mtu                       | 0                                    |
+        | name                      | bigip_external                       |
+        | provider:network_type     | vxlan                                |
+        | provider:physical_network |                                      |
+        | provider:segmentation_id  | 84                                   |
+        | router:external           | False                                |
+        | shared                    | False                                |
+        | status                    | ACTIVE                               |
+        | subnets                   |                                      |
+        | tenant_id                 | 1a35d6558b59423e83f4500f1ebc1cec     |
+        +---------------------------+--------------------------------------+
+
+
+F5® Agent is not provisioning LBaaS tasks correctly
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Make sure you don't have more than one agent running on the same host. If you see more than one entry for ``f5-openstack-agent`` and you haven't configured your host to use multiple agents, you'll need to deactivate one of them.
+
+    .. code-block:: text
+
+        $ neutron agent-list
+        \\ view list of running agents
+

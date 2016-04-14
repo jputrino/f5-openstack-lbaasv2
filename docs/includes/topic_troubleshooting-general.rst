@@ -1,7 +1,9 @@
 Troubleshooting
 ---------------
 
-To troubleshoot problems with the F5® LBaaSv1 driver or an F5® agent process, set the global Neutron and the F5® agent ``debug`` setting to ``True``. Extensive logging will then appear in the ``neutron-server`` and ``f5-oslbaasv1-agent`` log files on their respective hosts.
+To troubleshoot general problems, set the Neutron and the F5® agent ``debug`` setting to ``True``.
+
+Extensive logging will then appear in the ``neutron-server`` and ``f5-oslbaasv1-agent`` log files on their respective hosts.
 
 .. topic:: Set the DEBUG log level output for the f5-openstack-agent:
 
@@ -21,5 +23,5 @@ To troubleshoot problems with the F5® LBaaSv1 driver or an F5® agent process, 
     .. code-block:: text
 
         # vi /etc/neutron/neutron.conf
-        ???
+        DEBUG = T
 

@@ -10,7 +10,9 @@ F5® OpenStack LBaaSv2 Plugin Deployment Guide
 Release
 -------
 
-The latest release, v |release|, is compatible with OpenStack |openstack|. For more information regarding compatibility, versioning, and support, please see the `F5® OpenStack Releases and Support Matrix <f5-openstack-docs.rtfd.org/en/latest/releases-and-versioning.html>`_.
+.. include:: ../README.rst
+    :start-line: 40
+    :end-line: 45
 
 Before You Begin
 ----------------
@@ -24,7 +26,6 @@ Installation
 .. include:: includes/topic_install-f5-lbaasv2-packages.rst
     :start-line: 3
 
-
 Configuration
 -------------
 
@@ -35,18 +36,10 @@ Neutron
     :start-line: 3
 
 
-F5® LBaaSv2 Plugin
-~~~~~~~~~~~~~~~~~~
-
-Features
-````````
-.. include:: includes/ref_features.rst
-    :start-line: 3
+F5® Agent
+~~~~~~~~~
 
 .. include:: includes/topic_configure-the-agent.rst
-    :start-line: 3
-
-.. include:: includes/topic_start-the-agent.rst
     :start-line: 3
 
 .. include:: includes/topic_tip-stop-agent.rst
@@ -62,20 +55,12 @@ Usage
 Restrictions
 ~~~~~~~~~~~~
 
-.. include:: includes/ref_restrictions.rst
+.. include:: includes/topic_restrictions.rst
     :start-line: 3
 
-Examples
-~~~~~~~~
+.. seealso::
 
-.. todo:: Add examples
+    :ref:`Getting Started <getting-started-lbaasv2>`
 
+    :ref:`Troubleshooting <troubleshooting>`
 
-Troubleshooting
----------------
-
-.. include:: includes/topic_troubleshooting-general.rst
-    :start-line: 3
-
-.. include:: includes/topic_troubleshooting-f5agent.rst
-    :start-line: 3

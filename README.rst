@@ -37,6 +37,7 @@ The LBaaSv2 plugin comprises packages from different F5 Networks® projects:
 
 Releases
 --------
+
 The latest release is v |release|. See the :ref:`Release Notes <release-notes>` for more information.
 
 .. warning::
@@ -45,7 +46,7 @@ The latest release is v |release|. See the :ref:`Release Notes <release-notes>` 
 
 Documentation
 -------------
-See the `Deployment Guide <http://f5-openstack-lbaasv2.rtfd.org/en/latest//f5-lbaasv2-plugin-deployment-guide.html>`_ for installation and configuration instructions.
+See the `Deployment Guide <http://f5-openstack-lbaasv2.rtfd.org/en/latest/f5-lbaasv2-plugin-deployment-guide.html>`_ for installation and configuration instructions.
 
 .. note::
 
@@ -59,7 +60,7 @@ See the `Deployment Guide <http://f5-openstack-lbaasv2.rtfd.org/en/latest//f5-lb
 
 Compatibility
 -------------
-This plugin is compatible with OpenStack |openstack|. If you are using Kilo or earlier, you'll have to use the `LBaaSv1 plugin <https://github.com/F5Networks/openstack-f5-lbaasv1>`_. See the `F5® OpenStack Releases and Support Matrix <f5-openstack-docs.rtfd.org/en/latest/releases-and-versioning.html>`_ for more information.
+This plugin is compatible with OpenStack |openstack|. If you are using Kilo or earlier, you'll have to use the `LBaaSv1 plugin <https://github.com/F5Networks/f5-openstack-lbaasv1>`_. See the `F5® OpenStack Releases and Support Matrix <http://f5-openstack-docs.readthedocs.org/en/latest/releases_and_versioning.html>`_ for more information.
 
 .. _for-developers:
 
@@ -90,7 +91,7 @@ Copyright 2015-2016 F5 Networks, Inc.
 
 Support
 -------
-See `Support <https://github.com/F5Networks/f5-openstack-lbaasv2/blob/experimental/SUPPORT.md>`_.
+See `Support <https://github.com/F5Networks/f5-openstack-lbaasv2/blob/master/SUPPORT.md>`_.
 
 
 License

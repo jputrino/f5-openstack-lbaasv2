@@ -20,13 +20,13 @@ This release provides a limited set of configuration objects for use by OpenStac
 Available Features
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: includes/ref_features.rst
+.. include:: includes/topic_features.rst
     :start-line: 3
 
 Restrictions
 ~~~~~~~~~~~~
 
-.. include:: includes/ref_restrictions.rst
+.. include:: includes/topic_restrictions.rst
     :start-line: 3
 
 

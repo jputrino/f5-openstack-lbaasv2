@@ -1,15 +1,14 @@
 Configure the F5® OpenStack Agent
 ---------------------------------
 
-Before starting the F5 agent, edit the agent configuration file -- :file:`/etc/neutron/services/f5/f5-openstack-agent.ini` -- as appropriate for your environment.
+1. Edit the agent configuration file -- :file:`/etc/neutron/services/f5/f5-openstack-agent.ini` -- as appropriate for your environment.
 
-The following configurations are supported in v |release|.
+The following configurations are supported in v |release|. See the :ref:`Release Notes <release-notes>` or the config file for more information about these features.
 
 .. topic:: Device Settings
 
     .. code-block:: text
 
-        #
         # HA model
         #
         # ...
@@ -28,7 +27,6 @@ The following configurations are supported in v |release|.
 
     .. code-block:: text
 
-        #
         # Device VLAN to interface and tag mapping
         #
         # ...
@@ -36,7 +34,7 @@ The following configurations are supported in v |release|.
         f5_external_physical_mappings = default:1.1:True
         #
 
-      .. code-block:: text
+    .. code-block:: text
 
         # Device Tunneling (VTEP) selfips
         #
@@ -90,5 +88,13 @@ The following configurations are supported in v |release|.
         #
         icontrol_password = admin
         #
+
+
+2. Start the agent using the command appropriate for your OS.
+
+.. code-block:: text
+
+    # service f5-openstack-agent enable            \\ Debian/Ubuntu
+    # systemctl start f5-openstack-agent           \\ RedHat/CentOS
 
 

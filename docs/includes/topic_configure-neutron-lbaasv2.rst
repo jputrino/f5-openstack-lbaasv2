@@ -16,6 +16,10 @@ You will need to make a few configurations in your Neutron environment in order 
         service_provider = LOADBALANCERV2:F5NetworksTest:neutron_lbaas.drivers.f5.driver_v2.F5LBaaSV2DriverTest:default
         ...
 
+    .. note::
+
+        If there is an active entry for the F5®LBaaSv1 service provider driver, comment (#) it out.
+
 
 2. Edit the ``[DEFAULT]`` section of the Neutron config file -- :file:`/etc/neutron/neutron.conf`.
 
