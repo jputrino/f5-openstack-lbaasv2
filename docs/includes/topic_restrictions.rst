@@ -18,3 +18,13 @@ Restrictions
         |                || (e.g., ``neutron lbaas-loadbalancer-stats``)      |
         |                || SSL (TLS protocol)                                |
         +----------------+----------------------------------------------------+
+
+Unsupported Features
+--------------------
+
+The following features are unsupported in v |release|; they will be introduced in future releases.
+
+* vCMP® (multi-tenancy)
+* Agent High Availability
+* BIG-IP® Device Service Clustering
+* Multiple environments (Prod, Dev, Test)
