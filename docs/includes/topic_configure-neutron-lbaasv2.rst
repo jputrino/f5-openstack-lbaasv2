@@ -18,7 +18,7 @@ You will need to make a few configurations in your Neutron environment in order 
 
     .. note::
 
-        If there is an active entry for the F5®LBaaSv1 service provider driver, comment (#) it out.
+        If there is an active entry for the F5® LBaaSv1 service provider driver, comment (#) it out.
 
 
 2. Edit the ``[DEFAULT]`` section of the Neutron config file -- :file:`/etc/neutron/neutron.conf`.
