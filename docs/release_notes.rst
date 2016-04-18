@@ -4,14 +4,14 @@
 
 .. _release-notes:
 
-Release Notes v |release|
-=========================
+Release Notes |release|
+=======================
 
 .. warning::
 
-    THIS IS AN UNSUPPORTED ALPHA RELEASE. Available features and functionality are limited, as noted below.
+    THIS IS A RELEASE CANDIDATE. Available features and functionality are limited, as noted below.
 
-This release provides an implementation of the OpenStack Neutron LBaaS |version| driver and agent to support F5 Networks® BIG-IP® systems.
+This release provides an implementation of the OpenStack Neutron LBaaSv2 driver and agent to support F5 Networks® BIG-IP® systems.
 
 Release Highlights
 ------------------

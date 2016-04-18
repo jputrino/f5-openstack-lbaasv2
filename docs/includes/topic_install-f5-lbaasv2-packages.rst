@@ -10,8 +10,8 @@ Install the F5® Packages
 
     .. code-block:: text
 
-        $ pip install git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver
-        $ pip install git+https://github.com/F5Networks/f5-openstack-agent
+        $ sudo pip install git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver
+        $ sudo pip install git+https://github.com/F5Networks/f5-openstack-agent
 
 .. important::
 
@@ -21,5 +21,5 @@ Install the F5® Packages
 
     .. code-block:: text
 
-        $ pip install git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver@v8.0.1
+        $ sudo pip install git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver@v8.0.1
 
