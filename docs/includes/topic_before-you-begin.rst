@@ -1,7 +1,7 @@
 Before You Begin
 ----------------
 
-For release v |release|, you will need to take the steps below *before* installing the F5® LBaaSv2 plugin packages. This adds the necessary F5® service provider package to your Neutron controller.
+For release |release|, you will need to take the steps below *before* installing the F5® LBaaSv2 plugin packages. This adds the necessary F5® service provider package to your Neutron controller.
 
 .. topic:: Download the F5® LBaaSv2 service provider package and add it to the python path for ``neutron_lbaas``.
 
@@ -9,7 +9,7 @@ For release v |release|, you will need to take the steps below *before* installi
 
     .. code-block:: shell
 
-        $ curl -O -L https://github.com/F5Networks/neutron-lbaas/releases/download/v2.0.1a1/f5.tgz
+        $ curl -O -L https://github.com/F5Networks/neutron-lbaas/releases/download/v8.0.1RC1/f5.tgz
 
 
     2a. Install on CentOS:

@@ -38,7 +38,7 @@ The LBaaSv2 plugin comprises packages from different F5 Networks® projects:
 Releases
 --------
 
-The latest release is v |release|. See the :ref:`Release Notes <release-notes>` for more information.
+The latest release is |release|. See the :ref:`Release Notes <release-notes>` for more information.
 
 .. warning::
 

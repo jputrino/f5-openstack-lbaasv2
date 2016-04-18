@@ -7,5 +7,5 @@ Tip - How to stop the agent
 
     .. code-block:: text
 
-        # service f5-openstack-agent stop            \\ Debian/Ubuntu
-        # systemctl stop f5-openstack-agent.service  \\ RedHat/CentOS
+        $ sudo service f5-openstack-agent stop            \\ Debian/Ubuntu
+        $ sudo systemctl stop f5-openstack-agent.service  \\ RedHat/CentOS

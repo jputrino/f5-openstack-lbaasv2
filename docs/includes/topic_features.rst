@@ -1,7 +1,7 @@
 LBaaSv2 Features
 ----------------
 
-The configurable options supported in release v |release| are noted below. See the agent configuration file -- :file:`/etc/neutron/services/f5/f5-openstack-agent.ini` -- for more information about each feature.
+The configurable options supported in release |release| are noted below. See the agent configuration file -- :file:`/etc/neutron/services/f5/f5-openstack-agent.ini` -- for more information about each feature.
 
 
 Global Routed Mode
@@ -21,10 +21,10 @@ Setting ``f5_global_routed_mode`` to ``true`` causes the agent to assume that al
         f5_global_routed_mode = True
         #
 
-L3 Segmentation Modes
-`````````````````````
+L2/L3 Segmentation Modes
+````````````````````````
 
-L3 segmentation modes allow you to provision LBaaS services for BIG-IP® device(s) deployed outside of your OpenStack cloud.
+L2/L3 segmentation modes allow you to provision LBaaS services for BIG-IP® device(s) deployed outside of your OpenStack cloud.
 
 - ``f5_external_physical_mappings``: Device VLAN to interface and tag mapping
 
@@ -81,7 +81,6 @@ L3 segmentation modes allow you to provision LBaaS services for BIG-IP® device(
 
 HA model
 ````````
-
 
 - ``f5_ha_type``: Defines the high availability mode used by the BIG-IP®.
 

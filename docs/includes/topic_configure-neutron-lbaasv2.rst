@@ -39,5 +39,5 @@ You will need to make a few configurations in your Neutron environment in order 
 
     .. code-block:: text
 
-        $ service neutron-server restart    \\ Ubuntu
-        $ systemctl restart neutron-server  \\ CentOS
+        $ sudo service neutron-server restart    \\ Ubuntu
+        $ sudo systemctl restart neutron-server  \\ CentOS

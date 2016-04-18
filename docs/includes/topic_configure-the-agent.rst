@@ -3,7 +3,7 @@ Configure the F5® OpenStack Agent
 
 1. Edit the agent configuration file -- :file:`/etc/neutron/services/f5/f5-openstack-agent.ini` -- as appropriate for your environment.
 
-The following configurations are supported in v |release|. See the :ref:`Release Notes <release-notes>` or the config file for more information about these features.
+The following configurations are supported in |release|. See the :ref:`Release Notes <release-notes>` or the config file for more information about these features.
 
 .. topic:: Device Settings
 
@@ -23,7 +23,8 @@ The following configurations are supported in v |release|. See the :ref:`Release
         f5_sync_mode = replication
         #
 
-.. topic:: L2 Segmentation Mode Settings
+
+.. topic:: L2/L3 Segmentation Mode Settings
 
     .. code-block:: text
 
@@ -55,11 +56,12 @@ The following configurations are supported in v |release|. See the :ref:`Release
         #
         #
 
-.. topic:: L3 Segmentation Mode Settings
+
+.. topic:: Global Routed Mode Settings
 
     .. code-block:: text
 
-        # Global Routing Mode - No L2 or L3 Segmentation on BIG-IP®
+        # Global Routed Mode - No L2 or L3 Segmentation on BIG-IP®
         #
         # This setting will cause the agent to assume that all VIPs
         # and pool members will be reachable via global device
@@ -67,6 +69,7 @@ The following configurations are supported in v |release|. See the :ref:`Release
         #
         f5_global_routed_mode = True
         #
+
 
 
 .. topic:: Device Driver - iControl® Driver Setting
@@ -94,7 +97,9 @@ The following configurations are supported in v |release|. See the :ref:`Release
 
 .. code-block:: text
 
-    # service f5-openstack-agent enable            \\ Debian/Ubuntu
-    # systemctl start f5-openstack-agent           \\ RedHat/CentOS
+    $ sudo service f5-openstack-agent start             \\ Debian/Ubuntu
+
+    $ sudo systemctl enable f5-openstack-agent           \\ RedHat/CentOS
+    $ sudo systemctl start f5-openstack-agent
 
 

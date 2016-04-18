@@ -18,8 +18,8 @@ Here are a few things you can try:
 
     .. code-block:: text
 
-        # service f5-openstack-agent status           \\ Debian/Ubuntu
-        # systemctl status f5-openstack-agent.service \\ RedHat/CentOS
+        $ sudo service f5-openstack-agent status           \\ Debian/Ubuntu
+        $ sudo systemctl status f5-openstack-agent.service \\ RedHat/CentOS
 
 
 3. Make sure you can connect to the BIG-IP® and that the iControl® hostname, username, and password in the config file are correct.
@@ -61,10 +61,21 @@ Here are a few things you can try:
 F5® Agent is not provisioning LBaaS tasks correctly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Make sure you don't have more than one agent running on the same host. If you see more than one entry for ``f5-openstack-agent`` and you haven't configured your host to use multiple agents, you'll need to deactivate one of them.
+1. Make sure you don't have more than one agent running on the same host.
+
+    If you see more than one entry for ``f5-openstack-agent`` and you haven't configured your host to use multiple agents, you'll need to deactivate one of them. The commands below may help you to identify which agent to deactivate.
 
     .. code-block:: text
 
         $ neutron agent-list
-        \\ view list of running agents
+        \\ list all running agents
+
+        $ neutron agent-show <agent_id>
+        \\ show the details for a specific agent
+
+        $ neutron lbaas-loadbalancer-list-on-agent <agent_id>
+        \\ list the loadbalancers on the agent.
+
+        $ neutron lbaas-loadbalancer-show <loadbalancer_id>
+        \\ Show the details for a specific loadbalancer
 

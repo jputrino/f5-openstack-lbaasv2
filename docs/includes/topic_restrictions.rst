@@ -3,7 +3,7 @@ Restrictions
 
 .. note::
 
-    The features supported in v |release| are a subset of the `Neutron LBaaSv2 API <https://wiki.openstack.org/wiki/Neutron/LBaaS/API_2.0>`_ delivered in the OpenStack Liberty release. The following restrictions apply:
+    The features supported in |release| are a subset of the `Neutron LBaaSv2 API <https://wiki.openstack.org/wiki/Neutron/LBaaS/API_2.0>`_ delivered in the OpenStack Liberty release. The following restrictions apply:
 
     .. table::
 
@@ -22,7 +22,7 @@ Restrictions
 Unsupported Features
 --------------------
 
-The following features are unsupported in v |release|; they will be introduced in future releases.
+The following features are unsupported in |release|; they will be introduced in future releases.
 
 * vCMP® (multi-tenancy)
 * Agent High Availability
