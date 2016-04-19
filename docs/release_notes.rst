@@ -7,10 +7,6 @@
 Release Notes |release|
 =======================
 
-.. warning::
-
-    THIS IS A RELEASE CANDIDATE. Available features and functionality are limited, as noted below.
-
 This release provides an implementation of the OpenStack Neutron LBaaSv2 driver and agent to support F5 Networks® BIG-IP® systems.
 
 Release Highlights
