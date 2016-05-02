@@ -9,7 +9,7 @@ For release |release|, you will need to take the steps below *before* installing
 
     .. code-block:: shell
 
-        $ curl -O -L https://github.com/F5Networks/neutron-lbaas/releases/download/v8.0.1RC1/f5.tgz
+        $ curl -O -L https://github.com/F5Networks/neutron-lbaas/releases/download/v8.0.1/f5.tgz
 
 
     2a. Install on CentOS:
