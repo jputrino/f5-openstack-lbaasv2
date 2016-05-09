@@ -18,13 +18,13 @@ Before You Begin
 ----------------
 
 .. include:: includes/topic_before-you-begin.rst
-    :start-line: 3
+    :start-line: 5
 
 Installation
 ------------
 
 .. include:: includes/topic_install-f5-lbaasv2-packages.rst
-    :start-line: 3
+    :start-line: 5
 
 Configuration
 -------------
