@@ -9,12 +9,13 @@ Prerequisites
 In order to follow this guide, you will need the following:
 
 * A functional OpenStack |openstack| environment with at least one controller node, one compute node, and one network node.
-* An undercloud\* or overcloud\** BIG-IP® deployment.
+* An undercloud [#f1]_ or overcloud [#f2]_ BIG-IP® deployment.
 * Basic understanding of OpenStack networking concepts. See the `OpenStack docs <http://docs.openstack.org/liberty/>`_ for more information.
 * F5® service provider package installed on Neutron controller (see below).
 
-\* BIG-IP® VE deployed as an OpenStack instance
-\** BIG-IP® VE or hardware deployed outside of OpenStack
+
+.. [#f1] BIG-IP® VE deployed as an OpenStack instance
+.. [#f2] BIG-IP® VE or hardware deployed outside of OpenStack
 
 
 Install the F5® Service Provider Package
