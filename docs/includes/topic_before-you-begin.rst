@@ -43,4 +43,4 @@ Install the F5® LBaaSv2 service provider package *before* you :ref:`install the
 
     .. code-block:: text
 
-        $ sudo tar xvf f5.tgz –C /usr/local/lib/python2.7/dist-packages/neutron_lbaas/drivers/
+        $ sudo tar xvf f5.tgz –C /usr/lib/python2.7/dist-packages/neutron_lbaas/drivers/

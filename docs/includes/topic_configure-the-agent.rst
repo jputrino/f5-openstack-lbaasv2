@@ -1,11 +1,13 @@
 Configure the F5® OpenStack Agent
 ---------------------------------
 
-1. Edit the agent configuration file -- :file:`/etc/neutron/services/f5/f5-openstack-agent.ini` -- as appropriate for your environment.
+Edit the agent configuration file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following configurations are supported in |release|. See the :ref:`Release Notes <release-notes>` or the config file for more information about these features.
+Edit :file:`/etc/neutron/services/f5/f5-openstack-agent.ini` as appropriate for your environment. The configurations listed here are supported in |release|. See the :ref:`Release Notes <release-notes>` or the config file for more information about these features.
 
-.. topic:: Device Settings
+Device Settings
+^^^^^^^^^^^^^^^
 
     .. code-block:: text
 
@@ -23,8 +25,8 @@ The following configurations are supported in |release|. See the :ref:`Release N
         f5_sync_mode = replication
         #
 
-
-.. topic:: L2/L3 Segmentation Mode Settings
+L2/L3 Segmentation Mode Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     .. code-block:: text
 
@@ -56,8 +58,8 @@ The following configurations are supported in |release|. See the :ref:`Release N
         #
         #
 
-
-.. topic:: Global Routed Mode Settings
+Global Routed Mode Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     .. code-block:: text
 
@@ -70,9 +72,8 @@ The following configurations are supported in |release|. See the :ref:`Release N
         f5_global_routed_mode = True
         #
 
-
-
-.. topic:: Device Driver - iControl® Driver Setting
+Device Driver - iControl® Driver Setting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     .. code-block:: text
 
@@ -92,14 +93,16 @@ The following configurations are supported in |release|. See the :ref:`Release N
         icontrol_password = admin
         #
 
+Start the F5® agent
+~~~~~~~~~~~~~~~~~~~
 
-2. Start the agent using the command appropriate for your OS.
+Use the command(s) appropriate for your OS to start the agent.
 
-.. code-block:: text
+    .. code-block:: text
 
-    $ sudo service f5-openstack-agent start             \\ Debian/Ubuntu
+        $ sudo service f5-oslbaasv2-agent start             \\ Debian/Ubuntu
 
-    $ sudo systemctl enable f5-openstack-agent           \\ RedHat/CentOS
-    $ sudo systemctl start f5-openstack-agent
+        $ sudo systemctl enable f5-openstack-agent           \\ RedHat/CentOS
+        $ sudo systemctl start f5-openstack-agent
 
 
