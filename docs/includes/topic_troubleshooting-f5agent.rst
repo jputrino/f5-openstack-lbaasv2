@@ -18,7 +18,7 @@ Here are a few things you can try:
 
     .. code-block:: text
 
-        $ sudo service f5-openstack-agent status           \\ Debian/Ubuntu
+        $ sudo service f5-oslbaasv2-agent status           \\ Debian/Ubuntu
         $ sudo systemctl status f5-openstack-agent.service \\ RedHat/CentOS
 
 

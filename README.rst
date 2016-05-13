@@ -26,10 +26,12 @@ f5-openstack-lbaasv2
 
 Introduction
 ------------
+
 This repo contains the documentation for F5®'s OpenStack LBaaSv2 plugin. The LBaaSv2 plugin allows you to provision BIG-IP® load balancing services – including virtual IPs, pools, device service groups, and health monitoring – in an OpenStack cloud.
 
 Subprojects
 -----------
+
 The LBaaSv2 plugin comprises packages from different F5 Networks® projects:
 
  - `F5Networks/f5-openstack-lbaasv2-driver <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_
@@ -40,12 +42,10 @@ Releases
 
 The latest release is |release|. See the :ref:`Release Notes <release-notes>` for more information.
 
-.. warning::
-
-    Alpha and beta releases are **unsupported** development releases. We welcome feedback and bug reporting for these releases; see `For Developers <https://github.com/F5Networks/f5-openstack-lbaasv2#for-developers>`_ for more information.
 
 Documentation
 -------------
+
 See the `Deployment Guide <http://f5-openstack-lbaasv2.rtfd.org/en/liberty/f5-lbaasv2-plugin-deployment-guide.html>`_ for installation and configuration instructions.
 
 .. note::
@@ -60,6 +60,7 @@ See the `Deployment Guide <http://f5-openstack-lbaasv2.rtfd.org/en/liberty/f5-lb
 
 Compatibility
 -------------
+
 This plugin is compatible with OpenStack |openstack|. If you are using Kilo or earlier, you'll have to use the `LBaaSv1 plugin <https://github.com/F5Networks/f5-openstack-lbaasv1>`_. See the `F5® OpenStack Releases and Support Matrix <http://f5-openstack-docs.readthedocs.org/en/latest/releases_and_versioning.html>`_ for more information.
 
 .. _for-developers:
