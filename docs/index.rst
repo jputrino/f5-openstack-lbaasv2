@@ -21,7 +21,7 @@ Site Contents
 .. toctree::
     :maxdepth: 2
 
-    Release Notes - v8.0.1 <release_notes>
+    Release Notes <release_notes>
     Deployment Guide <f5-lbaasv2-plugin-deployment-guide>
     Coding Example <coding-example-lbaasv2>
     troubleshooting

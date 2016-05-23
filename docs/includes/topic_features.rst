@@ -1,3 +1,5 @@
+.. _lbaasv2-features:
+
 LBaaSv2 Features
 ----------------
 

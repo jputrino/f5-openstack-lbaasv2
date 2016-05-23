@@ -17,7 +17,7 @@ Available Features
 ~~~~~~~~~~~~~~~~~~
 
 .. include:: includes/topic_features.rst
-    :start-line: 3
+    :start-line: 5
 
 Restrictions
 ~~~~~~~~~~~~

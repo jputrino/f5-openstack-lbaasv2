@@ -1,4 +1,4 @@
-.. _deployment-guide:
+.. _lbaasv2-deployment-guide:
 
 F5® OpenStack LBaaSv2 Plugin Deployment Guide
 =============================================
